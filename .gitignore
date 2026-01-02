@@ -1,5 +1,6 @@
 *
 !/.gitignore
+!/CHANGELOG.md
 !/README.md
 !/RDP_CAVEATS.md
 !/Desktop/

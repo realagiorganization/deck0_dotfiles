@@ -14,6 +14,15 @@ This repository captures the files created or touched during the RDP setup and d
 - Local run: `make submodules` then `make discovery-full`
 - GitHub Action (VHS): `make actions-discovery`
 
+## Discovery reports
+- Latest report: [discovery/latest/REPORT.md](discovery/latest/REPORT.md)
+- Latest outputs:
+  - [discovery/latest/DISCOVERY_VMS.md](discovery/latest/DISCOVERY_VMS.md)
+  - [discovery/latest/DISCOVERY_STORAGES.md](discovery/latest/DISCOVERY_STORAGES.md)
+  - [discovery/latest/DISCOVERY_ISOS.md](discovery/latest/DISCOVERY_ISOS.md)
+  - [discovery/latest/DISCOVERY_VMS_PORTS.md](discovery/latest/DISCOVERY_VMS_PORTS.md)
+  - [discovery/latest/DISCOVERY_VMS_SCREENSHOTS.md](discovery/latest/DISCOVERY_VMS_SCREENSHOTS.md)
+
 ## RDP setup
 - [RDP_CAVEATS.md](RDP_CAVEATS.md)
 - [RDP server launcher](Desktop/RDP%20%F0%9F%A7%BE%F0%9F%94%90%20SAM.desktop)

@@ -7,6 +7,6 @@ Set Padding 24
 Type "make discovery-full"
 Enter
 Sleep 3s
-Type "ls -1 discovery"
+Type "ls -1 discovery/latest"
 Enter
 Sleep 1s

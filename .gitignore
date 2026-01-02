@@ -1,0 +1,14 @@
+*
+!/.gitignore
+!/RDP_CAVEATS.md
+!/Desktop/
+!/Desktop/RDP 🧾🔐 SAM.desktop
+!/Desktop/RDP 🧾🔐 SAM.rdp
+!/Desktop/rdp.sam
+!/.bash_history
+!/.codex/
+!/.codex/**
+!/.config/konsolerc
+!/.config/konsolesshconfig
+!/.local/share/konsole/
+!/.local/share/konsole/**

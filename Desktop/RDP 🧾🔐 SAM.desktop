@@ -1,0 +1,8 @@
+[Desktop Entry]
+Exec=/usr/bin/freerdp-shadow-cli /port:35589 /bind-address:0.0.0.0 /sec:nla +auth /sam-file:/home/deck/Desktop/rdp.sam
+Icon=homerun
+Name=RDP 🧾🔐 SAM
+StartupNotify=false
+Terminal=true
+Type=Application
+X-KDE-SubstituteUID=false

@@ -1,0 +1,14 @@
+[projects."/home/deck"]
+trust_level = "trusted"
+
+[projects."/home/deck/ROMS/Emulation/roms"]
+trust_level = "trusted"
+
+[projects."/run/media/deck/Untitled/__DOWNLOADS_LAST"]
+trust_level = "trusted"
+
+[projects."/home/deck/Desktop"]
+trust_level = "trusted"
+
+[notice]
+hide_full_access_warning = true

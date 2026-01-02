@@ -1,0 +1,2 @@
+prefix_rule(pattern=["sudo", "pacman", "-Rns", "krdp"], decision="allow")
+prefix_rule(pattern=["systemctl", "list-unit-files"], decision="allow")

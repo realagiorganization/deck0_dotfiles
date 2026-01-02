@@ -1,13 +1,3 @@
-rsync -avh --ignore-existing --info=progress2 --no-compress   ~/Music/ /run/media/deck/0214-5A6F/MP3/
-sudo umount /run/media/deck/0214-5A6F 
-mv *.AppImage ~/AppImages
-./lmms-1.2.2-linux-x86_64.AppImage
-./ossia.score-3.7.1-linux-x86_64.AppImage
-./install.sh
-flatpak install flathub org.zrythm.Zrythm
-name -m
-uname
-uname -m
 yay -S appimagelauncher
 cd 
 git clone https://aur.archlinux.org/yay-bin.git
@@ -498,3 +488,13 @@ ip addr
 history |grep rdp
  xfreerdp /v:127.0.0.1:35589 /u:deck /p:'1111' /cert:ignore
  xfreerdp /v:127.0.0.1:35589 /u:deck /p:'1111' 
+cd ~/Desktop/
+vim start-rdp-server.desktop 
+cd 
+git status
+git init .
+gh auth login
+codex
+git push -u origin main
+git push -u origin main
+  git push -u origin main

@@ -59,3 +59,9 @@
 {"session_id":"019b7e5e-3698-7402-aacc-c0a391ceebe7","ts":1767355894,"text":"okay i created gitignore that ignores everything. whats our next steps?"}
 {"session_id":"019b7e5e-3698-7402-aacc-c0a391ceebe7","ts":1767355987,"text":"yes, be mindful tho of relativeness of paths, and also add all bash history and logs and chatlogs and skills and ai agent specific files of codex too"}
 {"session_id":"019b7e5e-3698-7402-aacc-c0a391ceebe7","ts":1767356020,"text":"lets also add configurations of konsole. commit and push"}
+{"session_id":"019b7e5e-3698-7402-aacc-c0a391ceebe7","ts":1767356042,"text":"lets also add configurations of plasma of kde specifically panels layouts and widgets commmit and push"}
+{"session_id":"019b7e5e-3698-7402-aacc-c0a391ceebe7","ts":1767356116,"text":"lets also add onboard settings . name is standard , email is standard@example.in"}
+{"session_id":"019b7e5e-3698-7402-aacc-c0a391ceebe7","ts":1767356243,"text":"no use ssh not https , redo remote"}
+{"session_id":"019b7e5e-3698-7402-aacc-c0a391ceebe7","ts":1767356284,"text":"give me gh command to check existence of remote"}
+{"session_id":"019b7e5e-3698-7402-aacc-c0a391ceebe7","ts":1767356388,"text":"you havent created it yet! do it first then push"}
+{"session_id":"019b7e5e-3698-7402-aacc-c0a391ceebe7","ts":1767356495,"text":"success! now add all mentioned previously and all necessary non standard created helper scripts and settings, like tmux settings and evertyhing referneced in them"}

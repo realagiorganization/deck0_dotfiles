@@ -1,0 +1,55 @@
+[FileLocation]
+scrollbackUseCacheLocation=true
+scrollbackUseSystemLocation=false
+
+[General]
+ConfigVersion=1
+
+[KonsoleWindow]
+AllowMenuAccelerators=true
+FocusFollowsMouse=true
+RemoveWindowTitleBarAndFrame=true
+ShowWindowTitleOnTitleBar=true
+
+[MainWindow]
+ToolBarsMovable=Disabled
+
+[MainWindow][Toolbar mainToolBar]
+IconSize=32
+
+[MainWindow][Toolbar sessionToolbar]
+IconSize=48
+ToolButtonStyle=TextUnderIcon
+
+[MemorySettings]
+EnableMemoryMonitoring=true
+
+[Notification Messages]
+CloseAllEmptyTabs=true
+CloseSingleTab=true
+
+[PrintOptions]
+PrinterFriendly=false
+ScaleOutput=false
+
+[SplitView]
+SplitDragHandleSize=SplitDragHandleLarge
+SplitViewVisibility=AlwaysShowSplitHeader
+
+[TabBar]
+CloseTabButton=OnTabBar
+CloseTabOnMiddleMouseButton=true
+ExpandTabWidth=true
+NewTabButton=true
+TabBarPosition=Bottom
+TabBarVisibility=AlwaysShowTabBar
+
+[Toolbar mainToolBar]
+IconSize=32
+
+[Toolbar sessionToolbar]
+IconSize=48
+ToolButtonStyle=TextUnderIcon
+
+[UiSettings]
+ColorScheme=

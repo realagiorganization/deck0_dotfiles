@@ -379,3 +379,49 @@
 2026-01-02T12:13:40.801357Z  INFO ghost snapshot gate marked ready
 2026-01-02T12:13:45.274183Z  INFO ToolCall: shell_command {"command":"ls -a /home/deck/.config | rg -i konsole || true\nls -a /home/deck/.local/share | rg -i konsole || true","workdir":"/home/deck"}
 2026-01-02T12:13:52.278019Z  INFO ToolCall: shell_command {"command":"cat <<'EOF' > /home/deck/.gitignore\n*\n!/.gitignore\n!/RDP_CAVEATS.md\n!/Desktop/\n!/Desktop/RDP 🧾🔐 SAM.desktop\n!/Desktop/RDP 🧾🔐 SAM.rdp\n!/Desktop/rdp.sam\n!/.bash_history\n!/.codex/\n!/.codex/**\n!/.config/konsolerc\n!/.config/konsolesshconfig\n!/.local/share/konsole/\n!/.local/share/konsole/**\nEOF\n\ncd /home/deck\n\ngit add .gitignore RDP_CAVEATS.md \\\n  \"Desktop/RDP 🧾🔐 SAM.desktop\" \\\n  \"Desktop/RDP 🧾🔐 SAM.rdp\" \\\n  Desktop/rdp.sam \\\n  .bash_history \\\n  .codex \\\n  .config/konsolerc \\\n  .config/konsolesshconfig \\\n  .local/share/konsole\n\ngit commit -m \"Add RDP setup, Codex logs, shell history, and Konsole config\"\n\ngit push -u origin main","workdir":"/home/deck"}
+2026-01-02T12:14:02.612645Z  INFO spawning ghost snapshot task
+2026-01-02T12:14:02.679105Z  INFO ghost snapshot blocking task finished
+2026-01-02T12:14:02.679150Z  INFO ghost commit captured: 92445a1f836d3801d74e11bfa347e82477c86314
+2026-01-02T12:14:02.679162Z  INFO ghost snapshot gate marked ready
+2026-01-02T12:14:13.615493Z  INFO ToolCall: shell_command {"command":"ls -a /home/deck/.config | rg -i \"plasma|kde|plasmashell\" || true\nls -a /home/deck/.local/share | rg -i \"plasma|kde\" || true","workdir":"/home/deck"}
+2026-01-02T12:15:16.023490Z  INFO spawning ghost snapshot task
+2026-01-02T12:15:16.090953Z  INFO ghost snapshot blocking task finished
+2026-01-02T12:15:16.090991Z  INFO ghost commit captured: 6649801d7b0d5e3c299804876654c683740e54e7
+2026-01-02T12:15:16.091002Z  INFO ghost snapshot gate marked ready
+2026-01-02T12:15:19.800250Z  INFO ToolCall: shell_command {"command":"ls -a /home/deck/.config | rg -i onboard || true\nls -a /home/deck/.local/share | rg -i onboard || true","workdir":"/home/deck"}
+2026-01-02T12:15:27.460965Z  INFO ToolCall: shell_command {"command":"cat <<'EOF' > /home/deck/.gitignore\n*\n!/.gitignore\n!/RDP_CAVEATS.md\n!/Desktop/\n!/Desktop/RDP 🧾🔐 SAM.desktop\n!/Desktop/RDP 🧾🔐 SAM.rdp\n!/Desktop/rdp.sam\n!/.bash_history\n!/.codex/\n!/.codex/**\n!/.config/\n!/.config/konsolerc\n!/.config/konsolesshconfig\n!/.config/plasma-org.kde.plasma.desktop-appletsrc\n!/.config/onboard/\n!/.config/onboard/**\n!/.local/\n!/.local/share/konsole/\n!/.local/share/konsole/**\nEOF\n\ncd /home/deck\n\ngit config user.name \"standard\"\ngit config user.email \"standard@example.in\"\n\ngit add -f .gitignore RDP_CAVEATS.md \\\n  \"Desktop/RDP 🧾🔐 SAM.desktop\" \\\n  \"Desktop/RDP 🧾🔐 SAM.rdp\" \\\n  Desktop/rdp.sam \\\n  .bash_history \\\n  .codex \\\n  .config/konsolerc \\\n  .config/konsolesshconfig \\\n  .config/plasma-org.kde.plasma.desktop-appletsrc \\\n  .config/onboard \\\n  .local/share/konsole\n\ngit commit -m \"Add RDP setup, Codex data, shell history, and desktop configs\"\n\ngit push -u origin main","workdir":"/home/deck"}
+2026-01-02T12:15:34.346604Z  INFO ToolCall: shell_command {"command":"ls -a /home/deck/.config/onboard","workdir":"/home/deck"}
+2026-01-02T12:15:38.526806Z  INFO ToolCall: shell_command {"command":"ls -la /home/deck/.config | rg -i onboard || true\nls -la /home/deck/.config/onboard* || true","workdir":"/home/deck"}
+2026-01-02T12:15:41.452982Z  INFO ToolCall: shell_command {"command":"ls -a /home/deck/.config | grep -i onboard || true","workdir":"/home/deck"}
+2026-01-02T12:15:46.332515Z  INFO ToolCall: shell_command {"command":"rg --files /home/deck -g '*onboard*'","workdir":"/home/deck"}
+2026-01-02T12:15:50.522168Z  INFO ToolCall: shell_command {"command":"cd /home/deck\ngit remote -v","workdir":"/home/deck"}
+2026-01-02T12:15:58.897979Z  INFO ToolCall: shell_command {"command":"cd /home/deck\n\ngit branch -M main\n\ngit remote add origin git@github.com:realagiorganization/deck0_dotfiles.git\n\ngit push -u origin main","workdir":"/home/deck"}
+2026-01-02T12:16:05.217815Z  INFO ToolCall: shell_command {"command":"cd /home/deck\ngit remote set-url origin https://github.com/realagiorganization/deck0_dotfiles.git\n\ngit push -u origin main","workdir":"/home/deck"}
+2026-01-02T12:17:23.891702Z  INFO spawning ghost snapshot task
+2026-01-02T12:17:23.964949Z  INFO ghost snapshot blocking task finished
+2026-01-02T12:17:23.964998Z  INFO ghost commit captured: 54926722757a7dd495a4c23f1e6e35f27800fcfc
+2026-01-02T12:17:23.965009Z  INFO ghost snapshot gate marked ready
+2026-01-02T12:17:27.373924Z  INFO ToolCall: shell_command {"command":"cd /home/deck\n\ngit remote set-url origin git@github.com:realagiorganization/deck0_dotfiles.git\n\ngit remote -v","workdir":"/home/deck"}
+2026-01-02T12:18:04.037524Z  INFO spawning ghost snapshot task
+2026-01-02T12:18:04.101822Z  INFO ghost snapshot blocking task finished
+2026-01-02T12:18:04.101865Z  INFO ghost commit captured: 4fe383a25a17cc3e5b3c742c162a04e950e58c9f
+2026-01-02T12:18:04.101876Z  INFO ghost snapshot gate marked ready
+2026-01-02T12:19:48.642946Z  INFO spawning ghost snapshot task
+2026-01-02T12:19:48.736108Z  INFO ghost snapshot blocking task finished
+2026-01-02T12:19:48.736158Z  INFO ghost commit captured: 909459914a3c46e2c30895cf748d15158b0378ec
+2026-01-02T12:19:48.736212Z  INFO ghost snapshot gate marked ready
+2026-01-02T12:19:51.629659Z  INFO ToolCall: shell_command {"command":"cd /home/deck\n\ngh repo create realagiorganization/deck0_dotfiles --public --source /home/deck --remote origin\n\ngit push -u origin main","workdir":"/home/deck"}
+2026-01-02T12:21:35.008122Z  INFO spawning ghost snapshot task
+2026-01-02T12:21:35.078310Z  INFO ghost snapshot blocking task finished
+2026-01-02T12:21:35.078364Z  INFO ghost commit captured: 095c3a7dc3ffffe7a625f1b5ebbfbce1ddd95240
+2026-01-02T12:21:35.078375Z  INFO ghost snapshot gate marked ready
+2026-01-02T12:21:39.439326Z  INFO ToolCall: shell_command {"command":"cd /home/deck\n\ngit status -sb","workdir":"/home/deck"}
+2026-01-02T12:21:44.403182Z  INFO ToolCall: shell_command {"command":"cat /home/deck/.gitignore","workdir":"/home/deck"}
+2026-01-02T12:21:48.408616Z  INFO ToolCall: shell_command {"command":"rg -n --hidden --no-messages -g '.tmux.conf' -g 'tmux.conf' -g '*.tmux.conf' -g 'tmux.conf*' /home/deck","workdir":"/home/deck"}
+2026-01-02T12:21:52.363503Z  INFO ToolCall: shell_command {"command":"rg -n --hidden --no-messages \"tmux\" /home/deck/.config /home/deck/.tmux.conf /home/deck/.tmux.conf.local 2>/dev/null","workdir":"/home/deck"}
+2026-01-02T12:21:55.726723Z  INFO ToolCall: shell_command {"command":"ls -a /home/deck | rg -i 'tmux' || true\nls -a /home/deck/.config | rg -i 'tmux' || true","workdir":"/home/deck"}
+2026-01-02T12:22:01.132703Z  INFO ToolCall: shell_command {"command":"cd /home/deck\n\ngit status --short","workdir":"/home/deck"}
+2026-01-02T12:22:10.794030Z  INFO ToolCall: shell_command {"command":"ls -l /home/deck/.config/konsolerc /home/deck/.config/konsolesshconfig /home/deck/.config/plasma-org.kde.plasma.desktop-appletsrc","workdir":"/home/deck"}
+2026-01-02T12:22:14.957490Z  INFO ToolCall: shell_command {"command":"rg -n \"(Profile|Color|Key|Scheme)\" /home/deck/.local/share/konsole -g '*.profile' -g '*.colorscheme' -g '*.keytab' 2>/dev/null || true","workdir":"/home/deck"}
+2026-01-02T12:22:36.517451Z  INFO ToolCall: shell_command {"command":"cat <<'EOF' > /home/deck/.gitignore\n*\n!/.gitignore\n!/RDP_CAVEATS.md\n!/Desktop/\n!/Desktop/RDP 🧾🔐 SAM.desktop\n!/Desktop/RDP 🧾🔐 SAM.rdp\n!/Desktop/rdp.sam\n!/.bash_history\n!/.codex/\n!/.codex/**\n!/.config/\n!/.config/konsolerc\n!/.config/konsolesshconfig\n!/.config/plasma-org.kde.plasma.desktop-appletsrc\n!/.config/tmux/\n!/.config/tmux/**\n!/.tmux.conf\n!/.tmux.conf.local\n!/.local/\n!/.local/share/konsole/\n!/.local/share/konsole/**\nEOF","workdir":"/home/deck"}
+2026-01-02T12:22:41.979365Z  INFO ToolCall: shell_command {"command":"cd /home/deck\n\ngit add -f .gitignore RDP_CAVEATS.md \\\n  \"Desktop/RDP 🧾🔐 SAM.desktop\" \\\n  \"Desktop/RDP 🧾🔐 SAM.rdp\" \\\n  Desktop/rdp.sam \\\n  .bash_history \\\n  .codex \\\n  .config/konsolerc \\\n  .config/konsolesshconfig \\\n  .config/plasma-org.kde.plasma.desktop-appletsrc \\\n  .local/share/konsole\n\ngit status -sb","workdir":"/home/deck"}

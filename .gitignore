@@ -8,7 +8,14 @@
 !/.bash_history
 !/.codex/
 !/.codex/**
+!/.config/
 !/.config/konsolerc
 !/.config/konsolesshconfig
+!/.config/plasma-org.kde.plasma.desktop-appletsrc
+!/.config/tmux/
+!/.config/tmux/**
+!/.tmux.conf
+!/.tmux.conf.local
+!/.local/
 !/.local/share/konsole/
 !/.local/share/konsole/**

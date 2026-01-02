@@ -5,7 +5,9 @@ on:
     paths:
       - ".github/workflows/vhs.yml"
       - ".github/vhs/archlinux-kde.tape"
+      - ".github/vhs/archlinux-kde.act.tape"
       - "Dockerfile.archlinux"
+      - "Dockerfile.archlinux.act"
       - "README.md"
       - "assets/**"
   workflow_dispatch:
@@ -19,9 +21,20 @@ jobs:
     env:
       RUNNER_TOOL_CACHE: /opt/hostedtoolcache
       AGENT_TOOLSDIRECTORY: /opt/hostedtoolcache
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Select VHS inputs
+        run: |
+          if [ "${ACT}" = "true" ]; then
+            echo "VHS_DOCKERFILE=Dockerfile.archlinux.act" >> "${GITHUB_ENV}"
+            echo "VHS_TAPE=.github/vhs/archlinux-kde.act.tape" >> "${GITHUB_ENV}"
+          else
+            echo "VHS_DOCKERFILE=Dockerfile.archlinux" >> "${GITHUB_ENV}"
+            echo "VHS_TAPE=.github/vhs/archlinux-kde.tape" >> "${GITHUB_ENV}"
+          fi
 
       - name: Set up Buildx
         uses: docker/setup-buildx-action@v3
@@ -30,7 +43,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          file: Dockerfile.archlinux
+          file: ${{ env.VHS_DOCKERFILE }}
           load: true
           tags: deck0:ci
           cache-from: type=gha
@@ -48,8 +61,8 @@ jobs:
       - name: Record demo with VHS
         uses: charmbracelet/vhs-action@v2
         with:
-          tape: .github/vhs/archlinux-kde.tape
-          token: ${{ secrets.GITHUB_TOKEN }}
+          tape: ${{ env.VHS_TAPE }}
+          token: ${{ env.GH_TOKEN }}
 
       - name: Commit updated GIF
         uses: stefanzweifel/git-auto-commit-action@v5

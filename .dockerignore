@@ -1,0 +1,12 @@
+**
+!.github/
+!.github/vhs/
+!.github/vhs/archlinux-kde.tape
+!.github/vhs/archlinux-kde.act.tape
+!Dockerfile.archlinux
+!Dockerfile.archlinux.act
+!README.md
+!CHANGELOG.md
+!Makefile
+!assets/
+!assets/**

@@ -65,3 +65,5 @@
 {"session_id":"019b7e5e-3698-7402-aacc-c0a391ceebe7","ts":1767356284,"text":"give me gh command to check existence of remote"}
 {"session_id":"019b7e5e-3698-7402-aacc-c0a391ceebe7","ts":1767356388,"text":"you havent created it yet! do it first then push"}
 {"session_id":"019b7e5e-3698-7402-aacc-c0a391ceebe7","ts":1767356495,"text":"success! now add all mentioned previously and all necessary non standard created helper scripts and settings, like tmux settings and evertyhing referneced in them"}
+{"session_id":"019b7e5e-3698-7402-aacc-c0a391ceebe7","ts":1767356571,"text":"and all plasma settings"}
+{"session_id":"019b7e5e-3698-7402-aacc-c0a391ceebe7","ts":1767356594,"text":"all, each in separate commit"}

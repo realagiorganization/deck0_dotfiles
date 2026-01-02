@@ -425,3 +425,55 @@
 2026-01-02T12:22:14.957490Z  INFO ToolCall: shell_command {"command":"rg -n \"(Profile|Color|Key|Scheme)\" /home/deck/.local/share/konsole -g '*.profile' -g '*.colorscheme' -g '*.keytab' 2>/dev/null || true","workdir":"/home/deck"}
 2026-01-02T12:22:36.517451Z  INFO ToolCall: shell_command {"command":"cat <<'EOF' > /home/deck/.gitignore\n*\n!/.gitignore\n!/RDP_CAVEATS.md\n!/Desktop/\n!/Desktop/RDP 🧾🔐 SAM.desktop\n!/Desktop/RDP 🧾🔐 SAM.rdp\n!/Desktop/rdp.sam\n!/.bash_history\n!/.codex/\n!/.codex/**\n!/.config/\n!/.config/konsolerc\n!/.config/konsolesshconfig\n!/.config/plasma-org.kde.plasma.desktop-appletsrc\n!/.config/tmux/\n!/.config/tmux/**\n!/.tmux.conf\n!/.tmux.conf.local\n!/.local/\n!/.local/share/konsole/\n!/.local/share/konsole/**\nEOF","workdir":"/home/deck"}
 2026-01-02T12:22:41.979365Z  INFO ToolCall: shell_command {"command":"cd /home/deck\n\ngit add -f .gitignore RDP_CAVEATS.md \\\n  \"Desktop/RDP 🧾🔐 SAM.desktop\" \\\n  \"Desktop/RDP 🧾🔐 SAM.rdp\" \\\n  Desktop/rdp.sam \\\n  .bash_history \\\n  .codex \\\n  .config/konsolerc \\\n  .config/konsolesshconfig \\\n  .config/plasma-org.kde.plasma.desktop-appletsrc \\\n  .local/share/konsole\n\ngit status -sb","workdir":"/home/deck"}
+2026-01-02T12:22:45.453880Z  INFO ToolCall: shell_command {"command":"cd /home/deck\n\ngit commit -m \"Add Konsole and Plasma configs\"\n\ngit push -u origin main","workdir":"/home/deck"}
+2026-01-02T12:22:51.609510Z  INFO spawning ghost snapshot task
+2026-01-02T12:22:51.704447Z  INFO ghost snapshot blocking task finished
+2026-01-02T12:22:51.704498Z  INFO ghost commit captured: 0e459991a6278ed237a68983615a6f192d6ef02b
+2026-01-02T12:22:51.704519Z  INFO ghost snapshot gate marked ready
+2026-01-02T12:23:14.348342Z  INFO spawning ghost snapshot task
+2026-01-02T12:23:14.410700Z  INFO ghost snapshot blocking task finished
+2026-01-02T12:23:14.410744Z  INFO ghost commit captured: 59b8cbfaf0b6b3d7fe286a91db4286c62c7caf92
+2026-01-02T12:23:14.410753Z  INFO ghost snapshot gate marked ready
+2026-01-02T12:23:40.921488Z  INFO ToolCall: shell_command {"command":"ls -a /home/deck/.config | rg -i \"^plasma|^plasmashellrc$|^plasmarc$|^plasma-localerc$|^plasmanotifyrc$|^plasmaparc$|^plasma-org.kde.plasma.desktop-appletsrc$|^kdeglobals$|^kcminputrc$|^kwin.*$|^ksmserverrc$|^kscreenlockerrc$\"","workdir":"/home/deck"}
+2026-01-02T12:23:44.148578Z  INFO ToolCall: shell_command {"command":"ls -a /home/deck/.local/share | rg -i \"plasma|kwin\" || true","workdir":"/home/deck"}
+2026-01-02T12:23:56.321849Z  INFO ToolCall: apply_patch *** Begin Patch
+*** Update File: /home/deck/.gitignore
+@@
+ !/.config/
+ !/.config/konsolerc
+ !/.config/konsolesshconfig
+ !/.config/plasma-org.kde.plasma.desktop-appletsrc
++!/.config/plasma-localerc
++!/.config/plasma-nm/
++!/.config/plasma-nm/**
++!/.config/plasmanotifyrc
++!/.config/plasmaparc
++!/.config/plasmarc
++!/.config/plasmashellrc
++!/.config/plasma-workspace/
++!/.config/plasma-workspace/**
++!/.config/PlasmaDiscoverUpdates/
++!/.config/PlasmaDiscoverUpdates/**
++!/.config/kdeglobals
++!/.config/kcminputrc
++!/.config/kwinrc
++!/.config/ksmserverrc
++!/.config/kscreenlockerrc
+ !/.config/tmux/
+ !/.config/tmux/**
+ !/.tmux.conf
+ !/.tmux.conf.local
+ !/.local/
+ !/.local/share/konsole/
+ !/.local/share/konsole/**
++!/.local/share/plasma/
++!/.local/share/plasma/**
++!/.local/share/plasma_engine_comic/
++!/.local/share/plasma_engine_comic/**
++!/.local/share/plasma_icons/
++!/.local/share/plasma_icons/**
+*** End Patch
+2026-01-02T12:24:06.572342Z  INFO ToolCall: shell_command {"command":"cd /home/deck\n\ngit add .gitignore\n\ngit commit -m \"Update gitignore for Plasma settings\"","workdir":"/home/deck"}
+2026-01-02T12:24:16.108750Z  INFO ToolCall: shell_command {"command":"cd /home/deck\n\nitems=(\n  \".config/plasma-localerc\"\n  \".config/plasma-nm\"\n  \".config/plasmanotifyrc\"\n  \".config/plasmaparc\"\n  \".config/plasmarc\"\n  \".config/plasmashellrc\"\n  \".config/plasma-workspace\"\n  \".config/PlasmaDiscoverUpdates\"\n  \".config/kdeglobals\"\n  \".config/kcminputrc\"\n  \".config/kwinrc\"\n  \".config/ksmserverrc\"\n  \".config/kscreenlockerrc\"\n  \".local/share/plasma\"\n  \".local/share/plasma_engine_comic\"\n  \".local/share/plasma_icons\"\n)\n\nfor item in \"${items[@]}\"; do\n  if [ -e \"$item\" ]; then\n    git add -f \"$item\"\n    if git diff --cached --quiet; then\n      git reset -q \"$item\"\n      continue\n    fi\n    msg=\"Add Plasma config: $item\"\n    git commit -m \"$msg\"\n  fi\ndone\n","workdir":"/home/deck"}
+2026-01-02T12:24:24.295924Z  INFO ToolCall: shell_command {"command":"cd /home/deck\n\ngit status -sb","workdir":"/home/deck"}
+2026-01-02T12:24:37.153979Z  INFO ToolCall: shell_command {"command":"cd /home/deck\n\ngit add .codex/history.jsonl .codex/log/codex-tui.log .codex/sessions/2026/01/02/rollout-2026-01-02T13-01-02-019b7e5e-3698-7402-aacc-c0a391ceebe7.jsonl\n\ngit commit -m \"Update Codex logs\"","workdir":"/home/deck"}

@@ -1,6 +1,11 @@
 # deck0_dotfiles
 
+[![VHS](https://github.com/realagiorganization/deck0_dotfiles/actions/workflows/vhs.yml/badge.svg)](https://github.com/realagiorganization/deck0_dotfiles/actions/workflows/vhs.yml)
+
 This repository captures the files created or touched during the RDP setup and desktop customization.
+
+## Demo (Arch Linux + KDE)
+![Arch Linux KDE demo](assets/archlinux-kde.gif)
 
 ## RDP setup
 - [RDP_CAVEATS.md](RDP_CAVEATS.md)

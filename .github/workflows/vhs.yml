@@ -1,0 +1,45 @@
+name: VHS
+
+on:
+  push:
+    paths:
+      - ".github/workflows/vhs.yml"
+      - ".github/vhs/archlinux-kde.tape"
+      - "Dockerfile.archlinux"
+      - "README.md"
+      - "assets/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  record:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build Arch Linux KDE image (cached)
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: Dockerfile.archlinux
+          load: true
+          tags: deck0:ci
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Record demo with VHS
+        uses: charmbracelet/vhs-action@v2
+        with:
+          tape: .github/vhs/archlinux-kde.tape
+
+      - name: Commit updated GIF
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update VHS recording"
+          file_pattern: assets/archlinux-kde.gif

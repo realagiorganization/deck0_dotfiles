@@ -1,8 +1,13 @@
 *
 !/.gitignore
+!/.github/
+!/.github/**
 !/CHANGELOG.md
+!/Dockerfile.archlinux
 !/README.md
 !/RDP_CAVEATS.md
+!/assets/
+!/assets/**
 !/Desktop/
 !/Desktop/RDP 🧾🔐 SAM.desktop
 !/Desktop/RDP 🧾🔐 SAM.rdp

@@ -7,12 +7,13 @@
 - Added `.dockerignore` to keep build context small for the Docker image.
 - `make actions-vhs` now builds the image but fails in `charmbracelet/vhs-action`: `Failed to install ffmpeg`.
 - Workflow now seeds ffmpeg via `apt` and sets tool-cache envs, but the action still tries to download ffmpeg via GitHub API and fails under `act`.
+- Added ACT-specific VHS inputs and a lightweight `Dockerfile.archlinux.act` to reduce local build pressure.
 - `git push` to `origin main` succeeded.
 
 ## What to do next
-1) Provide a GitHub token to `act` so vhs-action can fetch the ffmpeg release, e.g.:
-   - `make actions-vhs ACT_FLAGS="--bind -s GITHUB_TOKEN=YOUR_TOKEN"`
-2) Re-run `make actions-vhs`.
+1) Re-run `make actions-vhs` with a GitHub token for `act`, e.g.:
+   - `GH_TOKEN=$(gh auth token) make actions-vhs ACT_FLAGS="--bind -s GH_TOKEN=$GH_TOKEN"`
+2) If the local run still fails, rely on GitHub Actions for the recording.
 3) If the GIF was generated/committed locally, check `git status` and push if needed.
 4) Build and run the mock Proxmox container: `make mock-proxmox-build` then `make mock-proxmox-run`.
 5) Run discovery against the mock SSH endpoint: `CHECK_HOSTS="root@localhost" SSH_OPTS="-p 2222" make discovery-full`.

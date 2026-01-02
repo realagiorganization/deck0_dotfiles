@@ -23,6 +23,12 @@ This repository captures the files created or touched during the RDP setup and d
   - [discovery/latest/DISCOVERY_VMS_PORTS.md](discovery/latest/DISCOVERY_VMS_PORTS.md)
   - [discovery/latest/DISCOVERY_VMS_SCREENSHOTS.md](discovery/latest/DISCOVERY_VMS_SCREENSHOTS.md)
 
+## Golden goal: mock Proxmox discovery
+- Initialize submodules: `make submodules`
+- Use the submodule mock SSH that emulates Proxmox (`qm` + `pct` output): `SSH_BIN=./thinkpadkali1dotfiles/scripts/mock/ssh`
+- Run discovery against the mock host: `CHECK_HOSTS="root@mock" make discovery-full`
+- Publish the report and outputs from `discovery/latest/` (e.g., commit `discovery/latest/REPORT.md` and the `DISCOVERY_*.md` files)
+
 ## RDP setup
 - [RDP_CAVEATS.md](RDP_CAVEATS.md)
 - [RDP server launcher](Desktop/RDP%20%F0%9F%A7%BE%F0%9F%94%90%20SAM.desktop)

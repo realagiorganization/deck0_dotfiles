@@ -1,20 +1,16 @@
 # Next Steps
 
 ## Current state
-- GitHub Actions/VHS workflow added; pushes work when DNS resolves `github.com`.
-- Local Actions runner uses `act` via Makefile, but installation failed because DNS could not resolve `github.com`.
-- `.actrc` added with default platform mapping for `act`.
-- Latest commits are local and not pushed due to intermittent DNS failures.
+- GitHub Actions/VHS workflow added; `.actrc` maps `ubuntu-latest`.
+- `act` installed to `/home/deck/.local/bin/act`.
+- `make actions-list` and `make actions-test` completed successfully.
+- `make actions-vhs` failed during checkout: `no space left on device` writing to `/tmp`.
+- `git push` to `origin main` succeeded.
 
 ## What to do next
-1) Restore DNS/network so `github.com` resolves.
-2) Run:
-   - `make actions-install`
-   - `make actions-list`
-   - `make actions-test`
-   - `make actions-vhs`
-3) Push: `git push -u origin main`
+1) Free disk space (especially `/tmp`/Docker): remove unused images/containers or clean temp files.
+2) Re-run `make actions-vhs`.
+3) If the GIF was generated/committed locally, check `git status` and push if needed.
 
 ## Notes
-- If `act` install succeeds, the Makefile targets should work as-is.
 - The VHS workflow will generate `assets/archlinux-kde.gif` and auto-commit it via GitHub Actions.

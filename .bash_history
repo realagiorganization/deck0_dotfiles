@@ -1,20 +1,3 @@
-yay -S appimagelauncher
-cd 
-git clone https://aur.archlinux.org/yay-bin.git
-cd yay-bin
-sudo pacman -S base-devel
-makepkg -si
-yay -S appimagelauncher
-sudo pacman -R yay 
-sudo pacman -R yay-bin
-yay -S appimagelauncher
-cd ..
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg
-sudo pacman -U 
-rm -Rf yay*
-git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg
 sudo pacman -U 
@@ -498,3 +481,20 @@ codex
 git push -u origin main
 git push -u origin main
   git push -u origin main
+cd ..
+ls
+df
+git status
+git log
+vim .gitignore
+git log
+git status
+run codex resume 019b7e5e-3698-7402-aacc-c0a391ceebe7
+codex resume 019b7e5e-3698-7402-aacc-c0a391ceebe7
+[200~
+  gh repo view realagiorganization/deck0_dotfiles --json name,owner,visibility,url
+  gh repo view realagiorganization/deck0_dotfiles --json name,owner,visibility,url
+git push
+git push
+codex resume 019b7e5e-3698-7402-aacc-c0a391ceebe7
+  gh repo create realagiorganization/deck0_dotfiles --public --source /home/deck --remote origin

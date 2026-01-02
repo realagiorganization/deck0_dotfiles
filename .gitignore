@@ -4,6 +4,7 @@
 !/.github/**
 !/CHANGELOG.md
 !/Dockerfile.archlinux
+!/.actrc
 !/Makefile
 !/README.md
 !/RDP_CAVEATS.md

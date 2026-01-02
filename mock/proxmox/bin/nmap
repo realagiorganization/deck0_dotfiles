@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ip="${@: -1}"
+
+cat <<OUT
+# Nmap 7.93 scan initiated
+Host: ${ip} ()\tStatus: Up
+Host: ${ip} ()\tPorts: 22/open/tcp//ssh///, 80/open/tcp//http///, 443/open/tcp//https///, 3389/open/tcp//ms-wbt-server///
+# Nmap done
+OUT

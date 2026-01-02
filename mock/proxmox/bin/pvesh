@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+cmd="${1:-}"
+path="${2:-}"
+
+if [ "$cmd" != "get" ]; then
+  exit 0
+fi
+
+if [[ "$path" != *"/agent/network-get-interfaces"* ]]; then
+  exit 0
+fi
+
+vmid="$(echo "$path" | awk -F'/' '{for (i=1; i<=NF; i++) if ($i=="qemu") print $(i+1)}')"
+
+case "$vmid" in
+  101)
+    ip="10.0.10.11"
+    ;;
+  102)
+    ip="10.0.10.12"
+    ;;
+  *)
+    ip="10.0.10.99"
+    ;;
+esac
+
+cat <<JSON
+[
+  {
+    "name": "eth0",
+    "ip-addresses": [
+      {"ip-address-type": "ipv4", "ip-address": "$ip"}
+    ]
+  }
+]
+JSON

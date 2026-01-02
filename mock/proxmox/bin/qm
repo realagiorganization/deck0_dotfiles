@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+cmd="${1:-}"
+case "$cmd" in
+  list)
+    cat <<'OUT'
+       VMID NAME                 STATUS     MEM(MB)    BOOTDISK(GB) PID
+        101 mockvm101            running    1024              10.00 4242
+        102 mockvm102            running    2048              20.00 4243
+OUT
+    ;;
+  config)
+    vmid="${2:-}"
+    case "$vmid" in
+      101)
+        echo "net0: virtio=AA:BB:CC:DD:EE:01,bridge=vmbr0"
+        ;;
+      102)
+        echo "net0: virtio=AA:BB:CC:DD:EE:02,bridge=vmbr0"
+        ;;
+      *)
+        exit 0
+        ;;
+    esac
+    ;;
+  *)
+    exit 0
+    ;;
+esac

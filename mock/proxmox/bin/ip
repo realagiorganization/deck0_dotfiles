@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if [ "${1:-}" = "-4" ] && [ "${2:-}" = "neigh" ] && [ "${3:-}" = "show" ]; then
+  cat <<'OUT'
+10.0.10.11 dev eth0 lladdr aa:bb:cc:dd:ee:01 REACHABLE
+10.0.10.12 dev eth0 lladdr aa:bb:cc:dd:ee:02 REACHABLE
+OUT
+  exit 0
+fi
+
+exec /sbin/ip "$@"

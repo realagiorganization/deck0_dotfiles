@@ -29,6 +29,12 @@ This repository captures the files created or touched during the RDP setup and d
 - Run discovery against the mock host: `CHECK_HOSTS="root@mock" make discovery-full`
 - Publish the report and outputs from `discovery/latest/` (e.g., commit `discovery/latest/REPORT.md` and the `DISCOVERY_*.md` files)
 
+## Comprehensive mock Proxmox (container + K8s/KubeVirt)
+- Build the mock image: `make mock-proxmox-build`
+- Run the mock SSH endpoint locally: `make mock-proxmox-run`
+- Discover against the running mock: `CHECK_HOSTS="root@localhost" SSH_OPTS="-p 2222" make discovery-full`
+- Optional MicroK8s/KubeVirt path: see `mock/proxmox/README.md`
+
 ## RDP setup
 - [RDP_CAVEATS.md](RDP_CAVEATS.md)
 - [RDP server launcher](Desktop/RDP%20%F0%9F%A7%BE%F0%9F%94%90%20SAM.desktop)

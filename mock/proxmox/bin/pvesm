@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+cmd="${1:-}"
+if [ "$cmd" != "status" ]; then
+  exit 0
+fi
+
+cat <<'OUT'
+Name          Type     Status     Total     Used        Available %
+local         dir      active 100000000 40000000 60000000 40.00%
+local-lvm     lvmthin  active 200000000 80000000 120000000 40.00%
+OUT

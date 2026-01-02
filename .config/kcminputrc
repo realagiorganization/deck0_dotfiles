@@ -1,0 +1,6 @@
+[Mouse]
+X11LibInputXAccelProfileFlat=true
+XLbInptNaturalScroll=true
+XLbInptPointerAcceleration=0.6
+cursorSize=48
+cursorTheme=Oxygen_Yellow

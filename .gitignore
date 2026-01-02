@@ -4,10 +4,13 @@
 !/.github/**
 !/CHANGELOG.md
 !/Dockerfile.archlinux
+!/Makefile
 !/README.md
 !/RDP_CAVEATS.md
 !/assets/
 !/assets/**
+!/scripts/
+!/scripts/**
 !/Desktop/
 !/Desktop/RDP 🧾🔐 SAM.desktop
 !/Desktop/RDP 🧾🔐 SAM.rdp

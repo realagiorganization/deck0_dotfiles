@@ -19,3 +19,39 @@
     local-lvm     lvmthin  active 200000000 80000000 120000000 40.00%
 | root@mock | ✅ reachable | Proxmox storage reachable |
 
+## Storage check at 2026-01-02T18:36:32+02:00
+| 🖥️ Host | 🔌 SSH | 🗂️ Notes |
+| --- | --- | --- |
+- Host: root@localhost
+  - SSH reachable.
+  - df -hT:
+    Filesystem     Type                 Size  Used Avail Use% Mounted on
+    fuse-overlayfs fuse.fuse-overlayfs  939G  822G  117G  88% /
+    tmpfs          tmpfs                 64M     0   64M   0% /dev
+    shm            tmpfs                 64M     0   64M   0% /dev/shm
+    /dev/nvme0n1p8 ext4                 939G  822G  117G  88% /etc/hosts
+    tmpfs          tmpfs                7.3G     0  7.3G   0% /proc/asound
+    tmpfs          tmpfs                7.3G     0  7.3G   0% /proc/acpi
+    tmpfs          tmpfs                7.3G     0  7.3G   0% /proc/scsi
+    tmpfs          tmpfs                7.3G     0  7.3G   0% /sys/firmware
+    tmpfs          tmpfs                7.3G     0  7.3G   0% /sys/devices/virtual/powercap
+  - lsblk -f:
+    NAME        FSTYPE FSVER LABEL UUID FSAVAIL FSUSE% MOUNTPOINTS
+    sdb                                                
+    ├─sdb1                                             
+    ├─sdb2                                             
+    └─sdb3                                             
+    zram0                                              [SWAP]
+    nvme0n1                                            
+    ├─nvme0n1p1                                        
+    ├─nvme0n1p2                                        
+    ├─nvme0n1p3                                        
+    ├─nvme0n1p4                                        
+    ├─nvme0n1p5                                        
+    ├─nvme0n1p6                                        
+    ├─nvme0n1p7                                        
+    └─nvme0n1p8                          116.6G    88% /etc/hosts
+                                                       /etc/hostname
+                                                       /etc/resolv.conf
+| root@localhost | ✅ reachable | Proxmox storage reachable |
+

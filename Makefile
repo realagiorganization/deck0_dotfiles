@@ -20,7 +20,7 @@ DISCOVERY_VMS_SCREENSHOTS_PATH_ABS := $(abspath $(DISCOVERY_VMS_SCREENSHOTS_PATH
 SCREENSHOT_DIR_ABS := $(abspath $(SCREENSHOT_DIR))
 SSH_BIN_RESOLVED := $(if $(findstring /,$(SSH_BIN)),$(abspath $(SSH_BIN)),$(SSH_BIN))
 
-.PHONY: actions-install actions-list actions-test actions-vhs actions-run actions-discovery submodules discovery-full mock-proxmox-build mock-proxmox-run mock-proxmox-stop
+.PHONY: actions-install actions-list actions-test actions-vhs actions-run actions-discovery submodules discovery-full mock-proxmox-build mock-proxmox-run mock-proxmox-stop mock-proxmox-smoke
 
 submodules:
 	git submodule update --init --recursive
@@ -58,3 +58,6 @@ mock-proxmox-run:
 
 mock-proxmox-stop:
 	DOCKER="$(DOCKER)" ./scripts/mock-proxmox-stop.sh
+
+mock-proxmox-smoke:
+	./scripts/mock-proxmox-smoke.sh

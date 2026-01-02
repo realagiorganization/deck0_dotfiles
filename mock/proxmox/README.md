@@ -25,12 +25,14 @@ ssh -p 2222 root@localhost "qm list"
 
 Run discovery against the mock:
 ```
-CHECK_HOSTS="root@localhost" SSH_OPTS="-p 2222" make discovery-full
+CHECK_HOSTS="root@localhost" \
+SSH_OPTS="-p 2222 -i $HOME/.local/share/proxmox-mock/id_ed25519 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" \
+make discovery-full
 ```
 
 ## MicroK8s (Deployment + Service)
 
-Build and load the image into MicroK8s:
+Build and load the image into MicroK8s (optional if using GHCR image):
 ```
 docker build -t proxmox-mock:local mock/proxmox
 microk8s ctr image import <(docker save proxmox-mock:local)
@@ -63,7 +65,7 @@ via a containerDisk image.
 microk8s enable kubevirt
 ```
 
-2) Import the image and apply the VM:
+2) Import the image and apply the VM (optional if using GHCR image):
 ```
 microk8s ctr image import <(docker save proxmox-mock:local)
 microk8s kubectl apply -f mock/proxmox/kubevirt/vm.yaml

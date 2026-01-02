@@ -24,4 +24,4 @@ spec:
       volumes:
         - name: containerdisk
           containerDisk:
-            image: proxmox-mock:local
+            image: ghcr.io/realagiorganization/proxmox-mock:latest

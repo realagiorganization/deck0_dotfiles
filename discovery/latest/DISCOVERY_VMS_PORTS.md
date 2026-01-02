@@ -1,7 +1,9 @@
 # 🔐 VM & LXC Port Discovery
 
-## 🔍 Port Scan — 2026-01-02T15:06:41+02:00
+## 🔍 Port Scan — 2026-01-02T18:36:33+02:00
 | 🖥️ Host | 🔌 SSH | 🌐 Node | 🧭 Notes |
 | --- | --- | --- | --- |
-| root@mock | ✅ reachable | — | Scan complete (top 50 TCP ports) |
+| root@localhost | ✅ reachable | fa37a945bfe6 | nmap missing on host; install to scan |
+
+> nmap not found on root@localhost — skipped port scan.
 

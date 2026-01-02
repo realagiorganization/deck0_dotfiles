@@ -9,3 +9,12 @@
     /var/lib/vz/template/iso/mock2.img	204800 KB
 | root@mock | ✅ reachable | Scanning /var/lib/vz /mnt /media /isos /iso (maxdepth 4) |
 
+## ISO/image check at 2026-01-02T18:36:33+02:00
+| 🖥️ Host | 🔌 SSH | 🗂️ Notes |
+| --- | --- | --- |
+- Search roots: /var/lib/vz /mnt /media /isos /iso (maxdepth 4)
+- Host: root@localhost
+  - SSH reachable.
+  - No images found in search paths.
+| root@localhost | ✅ reachable | Scanning /var/lib/vz /mnt /media /isos /iso (maxdepth 4) |
+

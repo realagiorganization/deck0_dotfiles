@@ -15,3 +15,12 @@
               202 stopped                mocklxc202
 | root@mock | ✅ reachable | ℹ️ see details above |
 
+## Check at 2026-01-02T18:36:31+02:00
+| 🖥️ Host | 🔌 SSH | 🏗️ Proxmox |
+| --- | --- | --- |
+- Host: root@localhost
+  - SSH reachable.
+  - Inspecting root@localhost for Proxmox services...
+    - Not a Proxmox host (pvesh not found).
+| root@localhost | ✅ reachable | ℹ️ see details above |
+

@@ -32,7 +32,8 @@ This repository captures the files created or touched during the RDP setup and d
 ## Comprehensive mock Proxmox (container + K8s/KubeVirt)
 - Build the mock image: `make mock-proxmox-build`
 - Run the mock SSH endpoint locally: `make mock-proxmox-run`
-- Discover against the running mock: `CHECK_HOSTS="root@localhost" SSH_OPTS="-p 2222" make discovery-full`
+- Discover against the running mock: `CHECK_HOSTS="root@localhost" SSH_OPTS="-p 2222 -i $HOME/.local/share/proxmox-mock/id_ed25519 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" make discovery-full`
+- Validate outputs: `make mock-proxmox-smoke`
 - Optional MicroK8s/KubeVirt path: see `mock/proxmox/README.md`
 
 ## RDP setup

@@ -3,8 +3,9 @@
 Generated via `make discovery-full` using the `thinkpadkali1dotfiles` submodule.
 
 ## Run context
-- CHECK_HOSTS: root@mock
-- SSH_BIN: thinkpadkali1dotfiles/scripts/mock/ssh
+- CHECK_HOSTS: root@localhost
+- SSH_BIN: ssh (containerized mock on port 2222)
+- SSH_OPTS: `-p 2222 -i $HOME/.local/share/proxmox-mock/id_ed25519 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null`
 - Output directory: discovery/latest/
 
 ## Outputs

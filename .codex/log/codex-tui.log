@@ -477,3 +477,100 @@
 2026-01-02T12:24:16.108750Z  INFO ToolCall: shell_command {"command":"cd /home/deck\n\nitems=(\n  \".config/plasma-localerc\"\n  \".config/plasma-nm\"\n  \".config/plasmanotifyrc\"\n  \".config/plasmaparc\"\n  \".config/plasmarc\"\n  \".config/plasmashellrc\"\n  \".config/plasma-workspace\"\n  \".config/PlasmaDiscoverUpdates\"\n  \".config/kdeglobals\"\n  \".config/kcminputrc\"\n  \".config/kwinrc\"\n  \".config/ksmserverrc\"\n  \".config/kscreenlockerrc\"\n  \".local/share/plasma\"\n  \".local/share/plasma_engine_comic\"\n  \".local/share/plasma_icons\"\n)\n\nfor item in \"${items[@]}\"; do\n  if [ -e \"$item\" ]; then\n    git add -f \"$item\"\n    if git diff --cached --quiet; then\n      git reset -q \"$item\"\n      continue\n    fi\n    msg=\"Add Plasma config: $item\"\n    git commit -m \"$msg\"\n  fi\ndone\n","workdir":"/home/deck"}
 2026-01-02T12:24:24.295924Z  INFO ToolCall: shell_command {"command":"cd /home/deck\n\ngit status -sb","workdir":"/home/deck"}
 2026-01-02T12:24:37.153979Z  INFO ToolCall: shell_command {"command":"cd /home/deck\n\ngit add .codex/history.jsonl .codex/log/codex-tui.log .codex/sessions/2026/01/02/rollout-2026-01-02T13-01-02-019b7e5e-3698-7402-aacc-c0a391ceebe7.jsonl\n\ngit commit -m \"Update Codex logs\"","workdir":"/home/deck"}
+2026-01-02T12:24:41.274841Z  INFO ToolCall: shell_command {"command":"cd /home/deck\n\ngit push -u origin main","workdir":"/home/deck"}
+2026-01-02T12:24:51.364923Z  INFO spawning ghost snapshot task
+2026-01-02T12:24:51.442976Z  WARN failed to capture ghost snapshot: git command `git add --all -- .codex/history.jsonl .codex/log/codex-tui.log .codex/sessions/2026/01/02/rollout-2026-01-02T13-01-02-019b7e5e-3698-7402-aacc-c0a391ceebe7.jsonl .local/share/plasma_engine_comic/xkcd.conf` failed with status exit status: 1: The following paths are ignored by one of your .gitignore files:
+.local/share
+hint: Use -f if you really want to add them.
+hint: Disable this message with "git config advice.addIgnoredFile false" sub_id="24"
+2026-01-02T12:24:51.443042Z  INFO ghost snapshot gate marked ready
+2026-01-02T12:25:13.176611Z  INFO ToolCall: shell_command {"command":"cat <<'EOF' > /home/deck/.tmux.conf\n# Tmux base config with common quality-of-life defaults.\n\n# Reload\nbind r source-file ~/.tmux.conf \\; display-message \"tmux.conf reloaded\"\n\n# Prefix key\nset -g prefix C-a\nunbind C-b\nbind C-a send-prefix\n\n# Mouse support\nset -g mouse on\n\n# Window and pane indexing\nset -g base-index 1\nsetw -g pane-base-index 1\nset -g renumber-windows on\n\n# History\nset -g history-limit 100000\n\n# Terminal and color\nset -g default-terminal \"tmux-256color\"\nset -ga terminal-overrides \",xterm-256color:RGB\"\n\n# Status bar\nset -g status-interval 5\nset -g status-justify centre\nset -g status-position bottom\nset -g status-style \"bg=#1e1e2e,fg=#cdd6f4\"\nset -g message-style \"bg=#1e1e2e,fg=#cdd6f4\"\nset -g pane-border-style \"fg=#585b70\"\nset -g pane-active-border-style \"fg=#89b4fa\"\n\n# Copy mode (vi-style)\nsetw -g mode-keys vi\nbind -T copy-mode-vi v send -X begin-selection\nbind -T copy-mode-vi y send -X copy-selection-and-cancel\n\n# Split panes like vim\nbind | split-window -h\nbind - split-window -v\nunbind '\"'\nunbind %\n\n# Pane navigation\nbind h select-pane -L\nbind j select-pane -D\nbind k select-pane -U\nbind l select-pane -R\n\n# Resize panes with repeatable keys\nbind -r H resize-pane -L 5\nbind -r J resize-pane -D 5\nbind -r K resize-pane -U 5\nbind -r L resize-pane -R 5\n\n# Faster key response\nset -g escape-time 10\n\n# Clipboard integration (Wayland/X11)\nset -g set-clipboard on\nif-shell 'command -v wl-copy >/dev/null 2>&1' 'set -g @copy-command \"wl-copy\"'\nif-shell 'command -v xclip >/dev/null 2>&1' 'set -g @copy-command \"xclip -selection clipboard\"'\n\n# Plugins (TPM)\nset -g @plugin 'tmux-plugins/tpm'\nset -g @plugin 'tmux-plugins/tmux-sensible'\nset -g @plugin 'tmux-plugins/tmux-resurrect'\nset -g @plugin 'tmux-plugins/tmux-continuum'\nset -g @plugin 'tmux-plugins/tmux-yank'\nset -g @plugin 'tmux-plugins/tmux-prefix-highlight'\nset -g @plugin 'tmux-plugins/tmux-pain-control'\nset -g @plugin 'tmux-plugins/tmux-open'\nset -g @plugin 'tmux-plugins/tmux-urlview'\n\n# Resurrect/Continuum settings\nset -g @resurrect-capture-pane-contents 'on'\nset -g @continuum-restore 'on'\nset -g @continuum-save-interval '15'\n\n# Initialize TPM (keep at bottom)\nrun '~/.tmux/plugins/tpm/tpm'\nEOF","workdir":"/home/deck"}
+2026-01-02T12:25:19.325593Z  INFO spawning ghost snapshot task
+2026-01-02T12:25:19.377964Z  WARN failed to capture ghost snapshot: git command `git add --all -- .codex/history.jsonl .codex/log/codex-tui.log .codex/sessions/2026/01/02/rollout-2026-01-02T13-01-02-019b7e5e-3698-7402-aacc-c0a391ceebe7.jsonl .local/share/plasma_engine_comic/xkcd.conf .tmux.conf` failed with status exit status: 1: The following paths are ignored by one of your .gitignore files:
+.local/share
+hint: Use -f if you really want to add them.
+hint: Disable this message with "git config advice.addIgnoredFile false" sub_id="26"
+2026-01-02T12:25:19.377998Z  INFO ghost snapshot gate marked ready
+2026-01-02T12:25:23.292778Z  INFO ToolCall: shell_command {"command":"cd /home/deck\n\ngit add -f .tmux.conf\n\ngit commit -m \"Add tmux config\"\n\ngit push -u origin main","workdir":"/home/deck"}
+2026-01-02T12:25:45.872886Z  INFO spawning ghost snapshot task
+2026-01-02T12:25:45.965415Z  WARN failed to capture ghost snapshot: git command `git add --all -- .codex/history.jsonl .codex/log/codex-tui.log .codex/sessions/2026/01/02/rollout-2026-01-02T13-01-02-019b7e5e-3698-7402-aacc-c0a391ceebe7.jsonl .local/share/plasma_engine_comic/xkcd.conf` failed with status exit status: 1: The following paths are ignored by one of your .gitignore files:
+.local/share
+hint: Use -f if you really want to add them.
+hint: Disable this message with "git config advice.addIgnoredFile false" sub_id="28"
+2026-01-02T12:25:45.965657Z  INFO ghost snapshot gate marked ready
+2026-01-02T12:26:01.475936Z  INFO ToolCall: apply_patch *** Begin Patch
+*** Add File: /home/deck/README.md
++# deck0_dotfiles
++
++This repository captures the files created or touched during the RDP setup and desktop customization.
++
++## RDP setup
++- [RDP_CAVEATS.md](RDP_CAVEATS.md)
++- [RDP server launcher](Desktop/RDP%20%F0%9F%A7%BE%F0%9F%94%90%20SAM.desktop)
++- [RDP client template](Desktop/RDP%20%F0%9F%A7%BE%F0%9F%94%90%20SAM.rdp)
++- [SAM file](Desktop/rdp.sam)
++
++## Shell history
++- [.bash_history](.bash_history)
++
++## Codex (AI agent) data
++- [Codex config](.codex/config.toml)
++- [Codex auth](.codex/auth.json)
++- [Codex history](.codex/history.jsonl)
++- [Codex log](.codex/log/)
++- [Codex sessions](.codex/sessions/)
++- [Codex skills](.codex/skills/)
++- [Codex version](.codex/version.json)
++- [Codex rules](.codex/rules/)
++
++## Konsole
++- [konsolerc](.config/konsolerc)
++- [konsolesshconfig](.config/konsolesshconfig)
++- [Konsole profiles and color schemes](.local/share/konsole/)
++
++## Plasma (KDE)
++- [Panel/widgets layout](.config/plasma-org.kde.plasma.desktop-appletsrc)
++- [plasmarc](.config/plasmarc)
++- [plasmashellrc](.config/plasmashellrc)
++- [plasmaparc](.config/plasmaparc)
++- [plasma-localerc](.config/plasma-localerc)
++- [plasmanotifyrc](.config/plasmanotifyrc)
++- [plasma-nm](.config/plasma-nm)
++- [plasma-workspace](.config/plasma-workspace)
++- [PlasmaDiscoverUpdates](.config/PlasmaDiscoverUpdates)
++- [kdeglobals](.config/kdeglobals)
++- [kcminputrc](.config/kcminputrc)
++- [kwinrc](.config/kwinrc)
++- [ksmserverrc](.config/ksmserverrc)
++- [Plasma user data](.local/share/plasma/)
++- [Plasma comic engine cache](.local/share/plasma_engine_comic/)
++- [Plasma icons](.local/share/plasma_icons/)
++
++## tmux
++- [.tmux.conf](.tmux.conf)
++
++## Git ignore policy
++- [.gitignore](.gitignore)
+*** End Patch
+2026-01-02T12:26:04.617643Z  INFO spawning ghost snapshot task
+2026-01-02T12:26:04.679871Z  WARN failed to capture ghost snapshot: git command `git add --all -- .codex/history.jsonl .codex/log/codex-tui.log .codex/sessions/2026/01/02/rollout-2026-01-02T13-01-02-019b7e5e-3698-7402-aacc-c0a391ceebe7.jsonl .local/share/plasma_engine_comic/xkcd.conf` failed with status exit status: 1: The following paths are ignored by one of your .gitignore files:
+.local/share
+hint: Use -f if you really want to add them.
+hint: Disable this message with "git config advice.addIgnoredFile false" sub_id="30"
+2026-01-02T12:26:04.679946Z  INFO ghost snapshot gate marked ready
+2026-01-02T12:26:08.759554Z  INFO ToolCall: shell_command {"command":"cd /home/deck\n\ngit add README.md\n\ngit commit -m \"Add README with repository contents\"\n\ngit push -u origin main","workdir":"/home/deck"}
+2026-01-02T12:26:13.337305Z  INFO ToolCall: apply_patch *** Begin Patch
+*** Update File: /home/deck/.gitignore
+@@
+ !/.gitignore
++!/README.md
+ !/RDP_CAVEATS.md
+*** End Patch
+2026-01-02T12:26:17.805417Z  INFO ToolCall: shell_command {"command":"cd /home/deck\n\ngit add -f README.md .gitignore\n\ngit commit -m \"Add README with repository contents\"\n\ngit push -u origin main","workdir":"/home/deck"}
+2026-01-02T12:26:36.452121Z  INFO spawning ghost snapshot task
+2026-01-02T12:26:36.533404Z  WARN failed to capture ghost snapshot: git command `git add --all -- .codex/history.jsonl .codex/log/codex-tui.log .codex/sessions/2026/01/02/rollout-2026-01-02T13-01-02-019b7e5e-3698-7402-aacc-c0a391ceebe7.jsonl .local/share/plasma_engine_comic/xkcd.conf` failed with status exit status: 1: The following paths are ignored by one of your .gitignore files:
+.local/share
+hint: Use -f if you really want to add them.
+hint: Disable this message with "git config advice.addIgnoredFile false" sub_id="32"
+2026-01-02T12:26:36.533496Z  INFO ghost snapshot gate marked ready
+2026-01-02T12:26:41.153125Z  INFO ToolCall: shell_command {"command":"cd /home/deck\n\ngit add .codex/history.jsonl \\\n  .codex/log/codex-tui.log \\\n  .codex/sessions/2026/01/02/rollout-2026-01-02T13-01-02-019b7e5e-3698-7402-aacc-c0a391ceebe7.jsonl \\\n  .local/share/plasma_engine_comic/xkcd.conf\n\ngit commit -m \"Update Codex logs and Plasma comic config\"\n\ngit push -u origin main","workdir":"/home/deck"}

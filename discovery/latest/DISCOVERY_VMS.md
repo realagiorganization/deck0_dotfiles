@@ -24,3 +24,12 @@
     - Not a Proxmox host (pvesh not found).
 | root@localhost | ✅ reachable | ℹ️ see details above |
 
+## Check at 2026-01-02T18:45:22+02:00
+| 🖥️ Host | 🔌 SSH | 🏗️ Proxmox |
+| --- | --- | --- |
+- Host: root@localhost
+  - SSH reachable.
+  - Inspecting root@localhost for Proxmox services...
+    - Not a Proxmox host (pvesh not found).
+| root@localhost | ✅ reachable | ℹ️ see details above |
+

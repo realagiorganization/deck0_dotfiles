@@ -18,3 +18,12 @@
   - No images found in search paths.
 | root@localhost | ✅ reachable | Scanning /var/lib/vz /mnt /media /isos /iso (maxdepth 4) |
 
+## ISO/image check at 2026-01-02T18:45:24+02:00
+| 🖥️ Host | 🔌 SSH | 🗂️ Notes |
+| --- | --- | --- |
+- Search roots: /var/lib/vz /mnt /media /isos /iso (maxdepth 4)
+- Host: root@localhost
+  - SSH reachable.
+  - No images found in search paths.
+| root@localhost | ✅ reachable | Scanning /var/lib/vz /mnt /media /isos /iso (maxdepth 4) |
+

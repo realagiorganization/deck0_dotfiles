@@ -16,6 +16,9 @@ permissions:
 jobs:
   record:
     runs-on: ubuntu-latest
+    env:
+      RUNNER_TOOL_CACHE: /opt/hostedtoolcache
+      AGENT_TOOLSDIRECTORY: /opt/hostedtoolcache
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -33,10 +36,20 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
+      - name: Seed ffmpeg cache for vhs-action
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          cache_dir="${RUNNER_TOOL_CACHE:-/opt/hostedtoolcache}"
+          mkdir -p "${cache_dir}/ffmpeg/latest/x64/bin"
+          ln -sf "$(command -v ffmpeg)" "${cache_dir}/ffmpeg/latest/x64/bin/ffmpeg"
+          touch "${cache_dir}/ffmpeg/latest/x64.complete"
+
       - name: Record demo with VHS
         uses: charmbracelet/vhs-action@v2
         with:
           tape: .github/vhs/archlinux-kde.tape
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Commit updated GIF
         uses: stefanzweifel/git-auto-commit-action@v5

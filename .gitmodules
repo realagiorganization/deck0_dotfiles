@@ -1,0 +1,3 @@
+[submodule "thinkpadkali1dotfiles"]
+	path = thinkpadkali1dotfiles
+	url = git@github.com:realagiorganization/thinkpadkali1dotfiles.git

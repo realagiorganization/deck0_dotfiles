@@ -7,6 +7,13 @@ This repository captures the files created or touched during the RDP setup and d
 ## Demo (Arch Linux + KDE)
 ![Arch Linux KDE demo](assets/archlinux-kde.gif)
 
+## Demo (ThinkpadKali1 discovery)
+![ThinkpadKali1 discovery demo](assets/thinkpadkali1dotfiles-discovery.gif)
+
+## Full discovery (thinkpadkali1dotfiles submodule)
+- Local run: `make submodules` then `make discovery-full`
+- GitHub Action (VHS): `make actions-discovery`
+
 ## RDP setup
 - [RDP_CAVEATS.md](RDP_CAVEATS.md)
 - [RDP server launcher](Desktop/RDP%20%F0%9F%A7%BE%F0%9F%94%90%20SAM.desktop)

@@ -1,0 +1,40 @@
+name: ThinkpadKali1 Discovery VHS
+
+on:
+  push:
+    paths:
+      - ".github/workflows/thinkpadkali1dotfiles-discovery.yml"
+      - ".github/vhs/thinkpadkali1dotfiles-discovery.tape"
+      - "Makefile"
+      - "README.md"
+      - ".gitmodules"
+      - "assets/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  record:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (with submodules)
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          ssh-key: ${{ secrets.THINKPADKALI1DOTFILES_DEPLOY_KEY }}
+
+      - name: Record discovery demo with VHS
+        uses: charmbracelet/vhs-action@v2
+        env:
+          CHECK_HOSTS: root@mock
+          SSH_BIN: ./thinkpadkali1dotfiles/scripts/mock/ssh
+          DISCOVERY_OUTPUT_DIR: discovery
+        with:
+          tape: .github/vhs/thinkpadkali1dotfiles-discovery.tape
+
+      - name: Commit updated discovery GIF
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update discovery VHS recording"
+          file_pattern: assets/thinkpadkali1dotfiles-discovery.gif

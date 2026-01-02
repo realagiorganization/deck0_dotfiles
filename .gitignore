@@ -5,15 +5,19 @@
 !/CHANGELOG.md
 !/Dockerfile.archlinux
 !/.actrc
+!/.gitmodules
 !/AGENTS.md
 !/NEXT_STEPS.md
 !/Makefile
 !/README.md
 !/RDP_CAVEATS.md
+!/SKILLS.md
 !/assets/
 !/assets/**
 !/scripts/
 !/scripts/**
+!/thinkpadkali1dotfiles/
+!/thinkpadkali1dotfiles/**
 !/Desktop/
 !/Desktop/RDP 🧾🔐 SAM.desktop
 !/Desktop/RDP 🧾🔐 SAM.rdp

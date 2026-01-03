@@ -21,7 +21,8 @@ jobs:
     env:
       RUNNER_TOOL_CACHE: /opt/hostedtoolcache
       AGENT_TOOLSDIRECTORY: /opt/hostedtoolcache
-      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      ACTIONS_TOOL_CACHE: /opt/hostedtoolcache
+      GH_TOKEN: ${{ secrets.GH_TOKEN || secrets.GITHUB_TOKEN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -31,6 +32,9 @@ jobs:
           if [ "${ACT}" = "true" ]; then
             echo "VHS_DOCKERFILE=Dockerfile.archlinux.act" >> "${GITHUB_ENV}"
             echo "VHS_TAPE=.github/vhs/archlinux-kde.act.tape" >> "${GITHUB_ENV}"
+            echo "RUNNER_TOOL_CACHE=/opt/acttoolcache" >> "${GITHUB_ENV}"
+            echo "AGENT_TOOLSDIRECTORY=/opt/acttoolcache" >> "${GITHUB_ENV}"
+            echo "ACTIONS_TOOL_CACHE=/opt/acttoolcache" >> "${GITHUB_ENV}"
           else
             echo "VHS_DOCKERFILE=Dockerfile.archlinux" >> "${GITHUB_ENV}"
             echo "VHS_TAPE=.github/vhs/archlinux-kde.tape" >> "${GITHUB_ENV}"
@@ -55,14 +59,32 @@ jobs:
           sudo apt-get install -y ffmpeg
           cache_dir="${RUNNER_TOOL_CACHE:-/opt/hostedtoolcache}"
           mkdir -p "${cache_dir}/ffmpeg/latest/x64/bin"
+          ln -sf "$(command -v ffmpeg)" "${cache_dir}/ffmpeg/latest/x64/ffmpeg"
           ln -sf "$(command -v ffmpeg)" "${cache_dir}/ffmpeg/latest/x64/bin/ffmpeg"
           touch "${cache_dir}/ffmpeg/latest/x64.complete"
 
+      - name: Verify ffmpeg cache (act)
+        if: ${{ env.ACT == 'true' }}
+        run: |
+          echo "RUNNER_TOOL_CACHE=${RUNNER_TOOL_CACHE}"
+          ls -la "${RUNNER_TOOL_CACHE}/ffmpeg/latest"
+          ls -la "${RUNNER_TOOL_CACHE}/ffmpeg/latest/x64"
+
       - name: Record demo with VHS
+        if: ${{ env.ACT != 'true' }}
         uses: charmbracelet/vhs-action@v2
+        env:
+          RUNNER_TOOL_CACHE: ${{ env.RUNNER_TOOL_CACHE }}
+          AGENT_TOOLSDIRECTORY: ${{ env.AGENT_TOOLSDIRECTORY }}
+          ACTIONS_TOOL_CACHE: ${{ env.ACTIONS_TOOL_CACHE }}
         with:
           tape: ${{ env.VHS_TAPE }}
           token: ${{ env.GH_TOKEN }}
+
+      - name: Record demo with VHS (act)
+        if: ${{ env.ACT == 'true' }}
+        run: |
+          echo "Skipping vhs-action under act; ffmpeg download is unreliable."
 
       - name: Commit updated GIF
         uses: stefanzweifel/git-auto-commit-action@v5

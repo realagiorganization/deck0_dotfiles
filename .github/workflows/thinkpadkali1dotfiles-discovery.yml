@@ -5,6 +5,7 @@ on:
     paths:
       - ".github/workflows/thinkpadkali1dotfiles-discovery.yml"
       - ".github/vhs/thinkpadkali1dotfiles-discovery.tape"
+      - ".github/vhs/thinkpadkali1dotfiles-discovery.act.tape"
       - "Makefile"
       - "README.md"
       - ".gitmodules"
@@ -17,12 +18,29 @@ permissions:
 jobs:
   record:
     runs-on: ubuntu-latest
+    env:
+      RUNNER_TOOL_CACHE: /opt/hostedtoolcache
+      AGENT_TOOLSDIRECTORY: /opt/hostedtoolcache
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
     steps:
       - name: Checkout (with submodules)
+        if: env.ACT != 'true'
         uses: actions/checkout@v4
         with:
           submodules: recursive
           ssh-key: ${{ secrets.THINKPADKALI1DOTFILES_DEPLOY_KEY }}
+
+      - name: Prepare local checkout (ACT)
+        if: env.ACT == 'true'
+        run: git submodule update --init --recursive
+
+      - name: Select VHS inputs
+        run: |
+          if [ "${ACT}" = "true" ]; then
+            echo "VHS_TAPE=.github/vhs/thinkpadkali1dotfiles-discovery.act.tape" >> "${GITHUB_ENV}"
+          else
+            echo "VHS_TAPE=.github/vhs/thinkpadkali1dotfiles-discovery.tape" >> "${GITHUB_ENV}"
+          fi
 
       - name: Record discovery demo with VHS
         uses: charmbracelet/vhs-action@v2
@@ -31,7 +49,8 @@ jobs:
           SSH_BIN: ./thinkpadkali1dotfiles/scripts/mock/ssh
           DISCOVERY_OUTPUT_DIR: discovery
         with:
-          tape: .github/vhs/thinkpadkali1dotfiles-discovery.tape
+          tape: ${{ env.VHS_TAPE }}
+          token: ${{ env.GH_TOKEN }}
 
       - name: Commit updated discovery GIF
         uses: stefanzweifel/git-auto-commit-action@v5

@@ -20,7 +20,7 @@ DISCOVERY_VMS_SCREENSHOTS_PATH_ABS := $(abspath $(DISCOVERY_VMS_SCREENSHOTS_PATH
 SCREENSHOT_DIR_ABS := $(abspath $(SCREENSHOT_DIR))
 SSH_BIN_RESOLVED := $(if $(findstring /,$(SSH_BIN)),$(abspath $(SSH_BIN)),$(SSH_BIN))
 
-.PHONY: actions-install actions-list actions-test actions-vhs actions-run actions-discovery submodules discovery-full mock-proxmox-build mock-proxmox-run mock-proxmox-stop mock-proxmox-smoke
+.PHONY: actions-install actions-list actions-test actions-vhs actions-run actions-discovery actions-proxmox-mock submodules discovery-full mock-proxmox-build mock-proxmox-run mock-proxmox-stop mock-proxmox-smoke
 
 submodules:
 	git submodule update --init --recursive
@@ -39,6 +39,9 @@ actions-vhs: submodules
 
 actions-discovery: submodules
 	$(ACT) -W .github/workflows/thinkpadkali1dotfiles-discovery.yml -j record $(ACT_PLATFORMS) $(ACT_FLAGS)
+
+actions-proxmox-mock: submodules
+	$(ACT) -W .github/workflows/proxmox-mock-ci.yml -j smoke-test $(ACT_PLATFORMS) $(ACT_FLAGS)
 
 discovery-full: submodules
 	@mkdir -p "$(DISCOVERY_OUTPUT_DIR_ABS)" "$(SCREENSHOT_DIR_ABS)"

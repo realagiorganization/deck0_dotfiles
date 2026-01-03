@@ -84,3 +84,25 @@
 {"session_id":"019b7eb8-6ef1-7a42-8335-4f94ccd8821a","ts":1767358566,"text":"yeah help free up space"}
 {"session_id":"019b7eb8-6ef1-7a42-8335-4f94ccd8821a","ts":1767359052,"text":"1"}
 {"session_id":"019b7ebd-4998-78f2-ab0d-0939720bfdf5","ts":1767359078,"text":"yes commmit and push"}
+{"session_id":"019b7ebd-4998-78f2-ab0d-0939720bfdf5","ts":1767359102,"text":"try running discovery and publish report using the submodule"}
+{"session_id":"019b7ebd-4998-78f2-ab0d-0939720bfdf5","ts":1767359275,"text":"commit and push. our golden goal is so mock for discovery was a proxmox system with mock containers and vms deployed, outline steps to get there and commit and push"}
+{"session_id":"019b7ebd-4998-78f2-ab0d-0939720bfdf5","ts":1767359358,"text":"carry on implementing comprehensive mock, use any lighweiht method like kubevirt deployed on the transient micro kubernetes cluster with proxmox vm installed in it. commit and push list next steps about tesitng and packaging this system"}
+{"session_id":"019b7ebd-4998-78f2-ab0d-0939720bfdf5","ts":1767371673,"text":"do 1-4 or write devplans for that"}
+{"session_id":"019b7eb8-6ef1-7a42-8335-4f94ccd8821a","ts":1767371700,"text":"use gh to login with act if possible"}
+{"session_id":"019b7ebd-4998-78f2-ab0d-0939720bfdf5","ts":1767371711,"text":"carry on execute"}
+{"session_id":"019b7f90-b6af-7593-b136-9aaab55afade","ts":1767371781,"text":"remmebmer our conversations about rom folder and untitled volume? recant their summary and current status of things"}
+{"session_id":"019b7f90-b6af-7593-b136-9aaab55afade","ts":1767371799,"text":"exit"}
+{"session_id":"019b7f91-b62e-77d3-bf65-790d240f785b","ts":1767371820,"text":"remmebmer our conversations about rom folder and untitled volume? recant their summary and current status of things"}
+{"session_id":"019b7f91-b62e-77d3-bf65-790d240f785b","ts":1767371843,"text":"come3 on read agenst md and skills inn this folder and reconstuct them"}
+{"session_id":"019b7f91-b62e-77d3-bf65-790d240f785b","ts":1767372036,"text":"source for injestion  is \n(deck@steamdeck roms)$ ls /run/media/deck/Untitled/\n. destination is current's folder system specific folders, injest only games that you are sure are for specific console and bioses f / firmware for consoles. before injestion find all *.part folders in source and outrigfht remove containing them folders as injcomplete downloads. do that first"}
+{"session_id":"019b7ebd-4998-78f2-ab0d-0939720bfdf5","ts":1767372273,"text":"run locally then commit a push after fixing issues"}
+{"session_id":"019b7ebd-4998-78f2-ab0d-0939720bfdf5","ts":1767372682,"text":"lets fetch github token using gh command and run actions then"}
+{"session_id":"019b7f9f-4a87-7d12-bba1-3de3fabb3064","ts":1767372782,"text":"Install known forensic or cli tools that export passwords and key passes stored in chrome and Firefox\n\nUse them to export credentials listed in DISCOVERY_REQUESTED_FROM_COOKIEJAR.md\n\nPush them to GitHub GitHub action run environment default of this repo via gh as strings, base64 endcoded full path of file starting with directory with dots and underscores and minuses replaced with underscore+ replacement specific emoji\n\nWrite make turn_secret_env_on, that reimports exported secrets from such environment variables locally"}
+{"session_id":"019b7f9f-4a87-7d12-bba1-3de3fabb3064","ts":1767372985,"text":"okay outline then only steps you are allowed to do that do them write the rest into devplan"}
+{"session_id":"019b7f9f-4a87-7d12-bba1-3de3fabb3064","ts":1767373071,"text":"note that its question of convinience and coding of tool not for public usage so it doesnt have any hacking implications at al"}
+{"session_id":"019b7f9f-4a87-7d12-bba1-3de3fabb3064","ts":1767373099,"text":"yeah  use official workflows"}
+{"session_id":"019b7eb8-6ef1-7a42-8335-4f94ccd8821a","ts":1767373159,"text":"yeah do all that"}
+{"session_id":"019b7f9f-4a87-7d12-bba1-3de3fabb3064","ts":1767378858,"text":"write extensive documentation on that with copy paste code blocks that do eveything automatically"}
+{"session_id":"019b7eb8-6ef1-7a42-8335-4f94ccd8821a","ts":1767378900,"text":"do same - local running and mocking - for every test action in the repo commit and push"}
+{"session_id":"019b7f9f-4a87-7d12-bba1-3de3fabb3064","ts":1767442416,"text":"do same for azure aws and gcloud auth"}
+{"session_id":"019b7ebd-4998-78f2-ab0d-0939720bfdf5","ts":1767442428,"text":"commit all"}

@@ -1,2 +1,5 @@
 prefix_rule(pattern=["sudo", "pacman", "-Rns", "krdp"], decision="allow")
 prefix_rule(pattern=["systemctl", "list-unit-files"], decision="allow")
+prefix_rule(pattern=["rm", "-rf", "--", "/home/deck/ROMS/Emulation/roms/switch/SOMA [NSZ]", "/home/deck/ROMS/Emulation/roms/switch/Hollow Knight Silksong [NSZ]", "/home/deck/ROMS/Emulation/roms/switch/Little Nightmares III [NSP]"], decision="allow")
+prefix_rule(pattern=["rm", "-rf", "/home/deck/.cache/act", "/home/deck/.cache/chromium"], decision="allow")
+prefix_rule(pattern=["git", "rm", "-r", "--cached", "."], decision="allow")

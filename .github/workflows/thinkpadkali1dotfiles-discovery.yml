@@ -21,7 +21,8 @@ jobs:
     env:
       RUNNER_TOOL_CACHE: /opt/hostedtoolcache
       AGENT_TOOLSDIRECTORY: /opt/hostedtoolcache
-      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      ACTIONS_TOOL_CACHE: /opt/hostedtoolcache
+      GH_TOKEN: ${{ secrets.GH_TOKEN || secrets.GITHUB_TOKEN }}
     steps:
       - name: Checkout (with submodules)
         if: env.ACT != 'true'
@@ -38,13 +39,41 @@ jobs:
         run: |
           if [ "${ACT}" = "true" ]; then
             echo "VHS_TAPE=.github/vhs/thinkpadkali1dotfiles-discovery.act.tape" >> "${GITHUB_ENV}"
+            echo "RUNNER_TOOL_CACHE=/opt/acttoolcache" >> "${GITHUB_ENV}"
+            echo "AGENT_TOOLSDIRECTORY=/opt/acttoolcache" >> "${GITHUB_ENV}"
+            echo "ACTIONS_TOOL_CACHE=/opt/acttoolcache" >> "${GITHUB_ENV}"
           else
             echo "VHS_TAPE=.github/vhs/thinkpadkali1dotfiles-discovery.tape" >> "${GITHUB_ENV}"
           fi
 
+      - name: Seed ffmpeg cache for vhs-action
+        if: ${{ env.ACT != 'true' }}
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          cache_dir="${RUNNER_TOOL_CACHE:-/opt/hostedtoolcache}"
+          mkdir -p "${cache_dir}/ffmpeg/latest/x64/bin"
+          ln -sf "$(command -v ffmpeg)" "${cache_dir}/ffmpeg/latest/x64/ffmpeg"
+          ln -sf "$(command -v ffmpeg)" "${cache_dir}/ffmpeg/latest/x64/bin/ffmpeg"
+          touch "${cache_dir}/ffmpeg/latest/x64.complete"
+
+      - name: Run discovery (act)
+        if: ${{ env.ACT == 'true' }}
+        env:
+          CHECK_HOSTS: root@mock
+          SSH_BIN: ./thinkpadkali1dotfiles/scripts/mock/ssh
+          DISCOVERY_OUTPUT_DIR: discovery/latest
+        run: |
+          make discovery-full
+          ls -1 discovery/latest
+
       - name: Record discovery demo with VHS
+        if: ${{ env.ACT != 'true' }}
         uses: charmbracelet/vhs-action@v2
         env:
+          RUNNER_TOOL_CACHE: ${{ env.RUNNER_TOOL_CACHE }}
+          AGENT_TOOLSDIRECTORY: ${{ env.AGENT_TOOLSDIRECTORY }}
+          ACTIONS_TOOL_CACHE: ${{ env.ACTIONS_TOOL_CACHE }}
           CHECK_HOSTS: root@mock
           SSH_BIN: ./thinkpadkali1dotfiles/scripts/mock/ssh
           DISCOVERY_OUTPUT_DIR: discovery

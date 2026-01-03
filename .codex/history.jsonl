@@ -106,3 +106,44 @@
 {"session_id":"019b7eb8-6ef1-7a42-8335-4f94ccd8821a","ts":1767378900,"text":"do same - local running and mocking - for every test action in the repo commit and push"}
 {"session_id":"019b7f9f-4a87-7d12-bba1-3de3fabb3064","ts":1767442416,"text":"do same for azure aws and gcloud auth"}
 {"session_id":"019b7ebd-4998-78f2-ab0d-0939720bfdf5","ts":1767442428,"text":"commit all"}
+{"session_id":"019b7f91-b62e-77d3-bf65-790d240f785b","ts":1767442466,"text":"add everytrhing large and non essential, not written by you like rom directories into gitignore, cleanse and purge repository to make it compact"}
+{"session_id":"019b7eb8-6ef1-7a42-8335-4f94ccd8821a","ts":1767443102,"text":"carry on documenting and commiting changesw"}
+{"session_id":"019b7f9f-4a87-7d12-bba1-3de3fabb3064","ts":1767443128,"text":"do further make samples into make commmands and github actions tests"}
+{"session_id":"019b7ebd-4998-78f2-ab0d-0939720bfdf5","ts":1767443140,"text":"carry on"}
+{"session_id":"019b7ebd-4998-78f2-ab0d-0939720bfdf5","ts":1767443406,"text":"go ahead"}
+{"session_id":"019b7f9f-4a87-7d12-bba1-3de3fabb3064","ts":1767443416,"text":"yes go ahead"}
+{"session_id":"019b83d7-8edd-78b1-a723-b0a43da6e0fb","ts":1767443537,"text":"lets find *.part files in this directory recursively and also in ~/Videos and ~/Music"}
+{"session_id":"019b83e0-913d-7130-9df3-58004eed7107","ts":1767444109,"text":"list unfinished conversations and output codex resume commands to contineu them"}
+{"session_id":"019b83e1-7596-7a63-9de2-613c26c342d3","ts":1767444246,"text":"find *.part files recursively in home direcotyr and Unttitled volume"}
+{"session_id":"019b83e0-913d-7130-9df3-58004eed7107","ts":1767444315,"text":"create an executable script codex_resume_lost_sessions.sh and place it in the home direcotry subdirectory thats is typical in the path that seeks unfinished convesations and opens a tmux wiht panes for each of them"}
+{"session_id":"019b83e4-8f72-7f92-ba24-e36cff572286","ts":1767444382,"text":"modify bashrc so when user types something and then press up button there was a history search with prefix something"}
+{"session_id":"019b83e0-913d-7130-9df3-58004eed7107","ts":1767444431,"text":"what is tmux hotkey to convert all panes to windows?"}
+{"session_id":"019b83e0-913d-7130-9df3-58004eed7107","ts":1767444464,"text":"rewrite script to open windows not pnes"}
+{"session_id":"019b7cfc-81b0-7811-a68f-e952378162dc","ts":1767444588,"text":"summarize this conversation purpose and outline its completion or non complection"}
+{"session_id":"019b7cfc-81b0-7811-a68f-e952378162dc","ts":1767444616,"text":"2"}
+{"session_id":"019b7d90-87c6-7931-b713-8ebf46525d24","ts":1767444655,"text":"summarize this conversation purpose and its completion or non completion, offer choices how to proceeed"}
+{"session_id":"019b7f91-b62e-77d3-bf65-790d240f785b","ts":1767444658,"text":"summarize this conversation purpose and its completion or non completion, offer choices how to proceeed"}
+{"session_id":"019b7ebd-4998-78f2-ab0d-0939720bfdf5","ts":1767444688,"text":"summarize this conversation purpose and its completion or non completion, offer choices how to proceeed"}
+{"session_id":"019b7eb8-6ef1-7a42-8335-4f94ccd8821a","ts":1767444691,"text":"summarize this conversation purpose and its completion or non completion, offer choices how to proceeed"}
+{"session_id":"019b83e4-8f72-7f92-ba24-e36cff572286","ts":1767444707,"text":"summarize this conversation purpose and its completion or non completion, offer choices how to proceeed"}
+{"session_id":"019b83e1-7596-7a63-9de2-613c26c342d3","ts":1767444750,"text":"list not part files but direcotrys that conintin them. shorten list if you must but give me complete overview where files are located"}
+{"session_id":"019b83e4-8f72-7f92-ba24-e36cff572286","ts":1767444779,"text":"install all necessary tools are log installation steps insturctions into INSTALL.md as you go"}
+{"session_id":"019b83e4-8f72-7f92-ba24-e36cff572286","ts":1767444820,"text":"all tools that are missing and failing"}
+{"session_id":"019b7ebd-4998-78f2-ab0d-0939720bfdf5","ts":1767444875,"text":"4"}
+{"session_id":"019b7eb8-6ef1-7a42-8335-4f94ccd8821a","ts":1767444891,"text":"3"}
+{"session_id":"019b7d90-87c6-7931-b713-8ebf46525d24","ts":1767444924,"text":"3"}
+{"session_id":"019b7f91-b62e-77d3-bf65-790d240f785b","ts":1767444951,"text":"2 and then 1"}
+{"session_id":"019b7d90-87c6-7931-b713-8ebf46525d24","ts":1767444995,"text":"delete duplicates only and all directoryies that contain .part because those are incoplemete unless they contain miuch more non .part files that .part fiels"}
+{"session_id":"019b7eb8-6ef1-7a42-8335-4f94ccd8821a","ts":1767445034,"text":"dont ever remove markdown files!!! preceed"}
+{"session_id":"019b7d90-87c6-7931-b713-8ebf46525d24","ts":1767445065,"text":"just ask on per case basis and develop rule as you go"}
+{"session_id":"019b7f91-b62e-77d3-bf65-790d240f785b","ts":1767445085,"text":"2"}
+{"session_id":"019b7ebd-4998-78f2-ab0d-0939720bfdf5","ts":1767445093,"text":"2"}
+{"session_id":"019b7eb8-6ef1-7a42-8335-4f94ccd8821a","ts":1767445112,"text":"dont remove stuff in discovery folder ever"}
+{"session_id":"019b7ebd-4998-78f2-ab0d-0939720bfdf5","ts":1767445153,"text":"keep discovery in the repo and make comments in agents.md that discovery gets conmmited always"}
+{"session_id":"019b83e1-7596-7a63-9de2-613c26c342d3","ts":1767445218,"text":"yes those directories look like trash remove them all except for /home/deck/Videos/bg_reenactment"}
+{"session_id":"019b83e4-8f72-7f92-ba24-e36cff572286","ts":1767445232,"text":"carry on yes do that"}
+{"session_id":"019b7ebd-4998-78f2-ab0d-0939720bfdf5","ts":1767445251,"text":"never remove disovery overwrite it with new one"}
+{"session_id":"019b83e1-7596-7a63-9de2-613c26c342d3","ts":1767445272,"text":"1 yes 2 no"}
+{"session_id":"019b83e1-7596-7a63-9de2-613c26c342d3","ts":1767445288,"text":"carry on"}
+{"session_id":"019b7ebd-4998-78f2-ab0d-0939720bfdf5","ts":1767445526,"text":"sudo chown for all files that you need. allow youself to sudo chown without asking"}
+{"session_id":"019b7ebd-4998-78f2-ab0d-0939720bfdf5","ts":1767445655,"text":"done"}

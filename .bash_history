@@ -1,22 +1,3 @@
-cd yay
-makepkg
-sudo pacman -U 
-sudo pacman -R yay-bin yay
-cd 
-git clone https://aur.archlinux.org/appimagelauncher.git
-cd appimagelauncher/\
-cd appimagelauncher
-makepkg
-makepkg -si
-cd ..
-git clone https://aur.archlinux.org/argagg.git
-cd argagg/
-makepkg -si
-sudo pacman -S --needed   base-devel   make   cmake   glib2   cairo   librsvg   fuse2   libarchive   libxpm   curl   boost   qt5-base   qt5-declarative   qt5-tools   patchelf
-cd 
-git clone https://github.com/TheAssassin/AppImageLauncher.git -b stable
-cd AppImageLauncher
-git submodule update --init --recursive
 export PREFIX="/usr/local/"
 mkdir build
 cd build
@@ -498,3 +479,22 @@ git push
 git push
 codex resume 019b7e5e-3698-7402-aacc-c0a391ceebe7
   gh repo create realagiorganization/deck0_dotfiles --public --source /home/deck --remote origin
+codex
+cd ROMS/Emulation/roms/
+ls
+codex
+codex
+codex
+mc
+8
+codex
+mc
+watch -n 1 df -H /home &df -H /run/media/deck/Untitled/
+watch -n 1 df -H /home && df -H /run/media/deck/Untitled/
+watch -n 1 df -H /home && df -H /run/media/deck/Untitled/
+watch -n 1 "df -H /home && df -H /run/media/deck/Untitled/"
+codex
+codex
+exit
+codex 
+exit

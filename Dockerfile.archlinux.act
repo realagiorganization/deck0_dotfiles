@@ -1,1 +1,17 @@
 FROM archlinux:latest
+
+RUN pacman -Syu --noconfirm \
+    && pacman -S --noconfirm \
+        git \
+        sudo \
+        which \
+    && pacman -Scc --noconfirm
+
+RUN useradd -m -G wheel -s /bin/bash deck \
+    && echo "%wheel ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/wheel
+
+COPY . /home/deck/deck0_dotfiles
+RUN chown -R deck:deck /home/deck/deck0_dotfiles
+
+USER deck
+WORKDIR /home/deck/deck0_dotfiles
